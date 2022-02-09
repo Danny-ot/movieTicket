@@ -12,3 +12,11 @@ function Tickets(){
     }
 }
 
+// Constructor For The Customer
+function customer(name , age , release , time , movie){
+    this.name = name;
+    this.age = age;
+    this.release = release;
+    this.time = time;
+    this.movie = movie;
+}
