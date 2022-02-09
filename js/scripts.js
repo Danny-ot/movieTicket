@@ -4,11 +4,11 @@ function Tickets(){
 
     };
     this.movies = {
-        "SpiderMan" : 3000,
-        "Jungle Cruise" : 3000,
-        "Lion King" : 3000,
-        "Red Notice" : 3000,
-        "Doctor Strange" : 3000
+        "spiderman" : 3000,
+        "jungle cruise" : 3000,
+        "lion king" : 3000,
+        "red notice" : 3000,
+        "doctor strange" : 3000
     };
     this.id = 0;
 }
@@ -27,16 +27,18 @@ Tickets.prototype.addCustomer = function(customer){
 };
 
 // Method For Getting Pricing
-Tickets.prototype.getPrice = function(id){
-    let customer = this.customers[id];
+Tickets.prototype.getPrice = function(customer){
     let price = this.movies[customer.movie];
+    if(price === undefined){
+        price = 0;
+    }
     if(customer.age > 65){
         price -= 500;
     }
     if(this.id < 3){
         price -= 300 
     }
-    if(customer.time ==="12:30" || customer.time === "3:30"){
+    if(customer.time ==="12:30 pm" || customer.time === "3:30 pm"){
         price -= 200
     }
     
