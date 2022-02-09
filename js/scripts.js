@@ -51,6 +51,15 @@ Tickets.prototype.findCustomer = function(id){
     return false
 }
 
+// Method For Deleting Customerw
+Tickets.prototype.deleteCustomer = function(id){
+    if(this.customers[id] === undefined){
+        return false;
+    }
+    delete this.customers[id];
+    return true;
+}
+
 // Constructor For The Customer
 function Customer(name , age , time , movie){
     this.name = name;
