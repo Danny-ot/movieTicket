@@ -35,8 +35,8 @@ Tickets.prototype.getPrice = function(customer){
     if(customer.age > 65){
         price -= 500;
     }
-    if(this.id < 3){
-        price -= 300 
+    if(this.id > 3){
+        price -= 200 
     }
     if(customer.time ==="12:30 pm" || customer.time === "3:30 pm"){
         price -= 200
@@ -63,9 +63,10 @@ Tickets.prototype.deleteCustomer = function(id){
 }
 
 // Constructor For The Customer
-function Customer(name , age , time , movie){
+function Customer(name , age , time , movie , price){
     this.name = name;
     this.age = age;
     this.time = time;
     this.movie = movie;
+    this.price = price;
 };
