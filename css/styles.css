@@ -23,4 +23,12 @@ select{
     padding: 30px;
     align-self: start;
 }
+.tickets{
+    margin-top: 30px;
+    font-size: large;
+}
+.data{
+    cursor: pointer;
+    margin-top: 10px;
+}
 
