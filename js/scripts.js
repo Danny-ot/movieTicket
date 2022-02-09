@@ -41,6 +41,14 @@ Tickets.prototype.getPrice = function(id){
     }
     
     return price;
+};
+
+// Method For Finding Customer
+Tickets.prototype.findCustomer = function(id){
+    if(this.customers[id] !== undefined ){
+        return this.customers[id];
+    }
+    return false
 }
 
 // Constructor For The Customer
