@@ -18,11 +18,18 @@ function attachListener(){
     $("ul#tickets-display").on("click" , "li" , function(){
         displayDetails(this.id)
     })
+
+    $(".display").on("click" , ".deleteButton" , function(){
+        tickets.deleteCustomer(this.id);
+        $(".display").hide();
+        displayContents(tickets);
+    })
 }
 
 // Function For Displaying The Full Details
 function displayDetails(id){
     let customer = tickets.findCustomer(id);
+    $(".display").toggle();
     $("#name-display").html(customer.name);
     $("#age-display").html(customer.age);
     $("#movie-display").html(customer.movie);
