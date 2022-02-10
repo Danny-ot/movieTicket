@@ -13,7 +13,28 @@ function displayContents(tickets){
     htmlElement.html(htmlString);
 }
 
+    // Create the function for attachng the listener
+function attachListener(){
+    $("ul#tickets-display").on("click" , "li" , function(){
+        displayDetails(this.id)
+    })
+}
+
+// Function For Displaying The Full Details
+function displayDetails(id){
+    let customer = tickets.findCustomer(id);
+    $("#name-display").html(customer.name);
+    $("#age-display").html(customer.age);
+    $("#movie-display").html(customer.movie);
+    $("#price-display").html(customer.price);
+    let button = $("#delete-btn-div");
+    button.empty();
+    button.append("<button class = 'btn btn-light deleteButton' id = " + id + "> Delete </button>")
+    
+}
+
 $("document").ready(function(){
+    attachListener();
 
     // The generate button click button
     $("#generate").click(function(){
